@@ -1,10 +1,14 @@
 # Multi-dimensional-search-in-Java
 Multi-dimensional search in Java
 Long Project 4: Multi-dimensional Search
-Project Description
+
+Project Description:
+
 Implement the operations described below that are required to perform multidimensional search. Starter code is provided. Do not change the signatures of methods
 declared to be public. Driver code is also provided along with several test cases.
-Multi-dimensional search
+
+Multi-dimensional search:
+
 Consider the web site of a seller like Amazon. They carry tens of thousands of products,
 and each product has many attributes (Name, Size, Description, Keywords, Manufacturer,
 Price, etc.). The search engine allows users to specify attributes of products that they are
@@ -14,37 +18,47 @@ products are organized by Name, how can search by price implemented efficiently?
 solution, called indexing in databases, is to create a new set of references to the objects
 for each search field, and organize them to implement search operations on that field
 efficiently. As the objects change, these access structures have to be kept consistent.
+
 In this project, each object has 3 attributes: id (long int), description (one or more long
 ints), and price (dollars and cents). The following operations are supported:
+
 Insert(id,price,list): insert a new item whose description is given in
 the list. If an entry with the same id already exists, then its
 description and price are replaced by the new values, unless list is
 null or empty, in which case, just the price is updated. Returns 1 if
 the item is new, and 0 otherwise.
+
 Find(id): return price of item with given id (or 0, if not found).
 Delete(id): delete item from storage. Returns the sum of the long ints
 that are in the description of the item deleted(or 0, if such an id did
 not exist).
+
 FindMinPrice(n): given a long int, find items whose description contains
 that number (exact match with one of the long ints in the item's
 description), and return lowest price of those items. Return 0 if
 there is no such item.
+
 FindMaxPrice(n): given a long int, find items whose description contains
 that number, and return highest price of those items.
 Return 0 if there is no such item.
+
 FindPriceRange(n,low,high): given a long int n, find the number of items
 whose description contains n, and in addition, their prices fall within
 the given range, [low, high].
+
 PriceHike(l,h,r): increase the price of every product, whose id is in
 the range [l,h] by r%. Discard any fractional pennies in the new prices
 of items. Note that you are truncating, not rounding.
 Returns the sum of the net increases of the prices.
+
 RemoveNames(id, list): Remove elements of list from the description of
 id.It is possible that some of the items in the list are not in the id's
 description. Return the sum of the numbers that are deleted from the
 description of id. Return 0 if there is no such id.
+
 Implement the operations using data structures that are best suited for the problem.
 Input specification:
+
 Initially, the store is empty, and there are no items. The input contains a sequence of lines
 (use test sets with millions of lines). Lines starting with "#" are comments. Other lines
 have one operation per line: name of the operation, followed by parameters needed for
